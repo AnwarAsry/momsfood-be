@@ -27,3 +27,42 @@ CREATE TABLE instructions
     step_order  INT  NOT NULL,
     description TEXT NOT NULL
 );
+
+INSERT INTO recipes (title, category, img_url, servings, prep_time, cook_time, notes)
+VALUES ('Spaghetti Bolognese', 'Italian', '', 4, 15, 60, 'A classic Italian pasta dish.'),
+       ('Chicken Curry', 'Indian', '', 4, 20, 40, 'A flavorful and spicy chicken curry.'),
+       ('Beef Tacos', 'Mexican', '', 4, 10, 20, 'Delicious beef tacos with fresh toppings.');
+
+INSERT INTO ingredients (recipe_id, name, amount, unit)
+VALUES (1, 'Spaghetti', 400, 'grams'),
+       (1, 'Ground Beef', 500, 'grams'),
+       (1, 'Tomato Sauce', 2, 'cups'),
+       (1, 'Onion', 1, 'medium'),
+       (1, 'Garlic', 2, 'cloves'),
+       (2, 'Chicken Breast', 500, 'grams'),
+       (2, 'Curry Powder', 2, 'tablespoons'),
+       (2, 'Coconut Milk', 1, 'cup'),
+       (2, 'Onion', 1, 'medium'),
+       (2, 'Garlic', 2, 'cloves'),
+       (3, 'Ground Beef', 500, 'grams'),
+       (3, 'Taco Shells', 8, 'pieces'),
+       (3, 'Lettuce', 1, 'cup'),
+       (3, 'Cheddar Cheese', 1, 'cup'),
+       (3, 'Salsa', 1, 'cup');
+
+INSERT INTO instructions (recipe_id, step_order, description)
+VALUES (1, 1, 'Cook the spaghetti according to package instructions.'),
+       (1, 2, 'In a large pan, sauté the onion and garlic until fragrant.'),
+       (1, 3, 'Add the ground beef and cook until browned.'),
+       (1, 4, 'Stir in the tomato sauce and let it simmer for 30 minutes.'),
+       (1, 5, 'Serve the sauce over the cooked spaghetti.'),
+       (2, 1, 'Cut the chicken breast into bite-sized pieces.'),
+       (2, 2, 'In a large pan, sauté the onion and garlic until fragrant.'),
+       (2, 3, 'Add the chicken pieces and cook until browned.'),
+       (2, 4, 'Stir in the curry powder and cook for 1 minute.'),
+       (2, 5, 'Pour in the coconut milk and let it simmer for 20 minutes.'),
+       (2, 6, 'Serve the chicken curry with rice.'),
+       (3, 1, 'Cook the ground beef in a pan until browned.'),
+       (3, 2, 'Warm the taco shells according to package instructions.'),
+       (3, 3, 'Assemble the tacos by adding the cooked beef, lettuce, cheese, and salsa to each shell.'),
+       (3, 4, 'Serve the tacos immediately.');
