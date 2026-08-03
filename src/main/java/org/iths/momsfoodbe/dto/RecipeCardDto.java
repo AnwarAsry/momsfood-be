@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RecipeCardDTO {
+public class RecipeCardDto {
     private Long id;
     private String title;
     private String category;
