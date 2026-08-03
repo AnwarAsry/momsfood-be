@@ -36,8 +36,8 @@ public class RecipeService {
     }
 
     // Create a new recipe
-    public void createRecipe(RecipeFormDto dto) {
+    public RecipeDto createRecipe(RecipeFormDto dto) {
         Recipe recipe = recipeMapper.toEntity(dto);
-        recipeRepository.save(recipe);
+        return recipeMapper.toDto(recipeRepository.save(recipe));
     }
 }
