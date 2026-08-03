@@ -27,7 +27,7 @@ public class Recipe {
     @Column(nullable = false)
     private Category category;
 
-    @Column(name = "img_url")
+    @Column(name = "img_url", nullable = false)
     private String imgUrl;
 
     private Integer servings;
