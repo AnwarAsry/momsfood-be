@@ -51,6 +51,7 @@ public class Recipe {
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
     @OrderColumn(name = "step_order")
+    //@OrderBy("stepOrder ASC")
     @Builder.Default
     private List<Instruction> instructions = new ArrayList<>();
 }
