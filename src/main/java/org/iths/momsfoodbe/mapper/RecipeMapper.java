@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 @Component
 public class RecipeMapper {
@@ -75,12 +76,16 @@ public class RecipeMapper {
                         .build())
                 .toList();
 
-        List<Instruction> instructions = dto.getInstructions().stream()
-                .map(desc -> Instruction.builder()
-                        .description(desc)
-                        .recipe(recipe)
-                        .build())
-                .toList();
+
+        List<Instruction> instructions = IntStream.range(0, dto.getInstructions().size())
+                .mapToObj(i -> {
+                    String desc = dto.getInstructions().get(i);
+                    return Instruction.builder()
+                            .description(desc)
+                            .stepOrder(i)
+                            .recipe(recipe)
+                            .build();
+                }).toList();
 
         recipe.setIngredients(new ArrayList<>(ingredients));
         recipe.setInstructions(new ArrayList<>(instructions));
