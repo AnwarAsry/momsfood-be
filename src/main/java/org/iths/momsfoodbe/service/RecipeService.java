@@ -40,4 +40,8 @@ public class RecipeService {
         Recipe recipe = recipeMapper.toEntity(dto);
         return recipeMapper.toDto(recipeRepository.save(recipe));
     }
+
+    public List<RecipeCardDto> searchRecipes(String query) {
+        return recipeRepository.search(query).stream().map(recipeMapper::toCardDto).toList();
+    }
 }
